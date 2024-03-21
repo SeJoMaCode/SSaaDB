@@ -60,6 +60,7 @@ console.log(joinedData);
 - Use a pagination system for getEntries for the case of larger tables
     - This will cause joinTables to need to be reworked
 - Handle concurrent access to the database
+- Ability to do other types of joins
 
 
 ## API Reference
