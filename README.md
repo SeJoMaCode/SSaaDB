@@ -19,6 +19,7 @@ SSaaDB is a Google Apps Script library that allows you to use a Google Spreadshe
 3. Copy the contents of `SSaaDB.gs` into your project.
 
 ## Usage
+Currently you must manually make a new Google sheet and and copy the id from it.
 
 ```javascript
 // Create a new instance of SSaaDB
@@ -49,6 +50,17 @@ db.insertEntry('orders', [2, 1, 'Product B']);
 const joinedData = db.joinTables('users', 'orders', 'id', ['users.name', 'orders.product']);
 console.log(joinedData);
 ```
+
+## Roadmap
+
+- Automatic creation/detection of Spreadsheets(databases)
+- True primary and foreign keys
+- Optimize update and deletion by doing it in bulk
+- Filter entries with getRange() instead of getting all values then filtering
+- Use a pagination system for getEntries for the case of larger tables
+    - This will cause joinTables to need to be reworked
+- Handle concurrent access to the database
+
 
 ## API Reference
 
