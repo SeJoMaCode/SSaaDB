@@ -236,7 +236,7 @@ var SSaaDB = /** @class */ (function () {
     * @param headers - An array of column names to include in the result (optional).
     * @returns An array of objects representing the joined entries with the selected columns.
     */
-    SSaaDB.prototype.joinTables = function (table1Name, table2Name, joinKey, headers) {
+    SSaaDB.prototype.joinInner = function (table1Name, table2Name, joinKey, headers) {
         if (headers === void 0) { headers = null; }
         var table1Entries = headers
             ? this.getEntries(table1Name, null, __spreadArray([joinKey], headers.filter(function (header) { return header.startsWith(table1Name + '.'); }).map(function (header) { return header.split('.')[1]; }), true))

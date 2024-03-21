@@ -29,8 +29,8 @@ function testSSaaDB() {
     if (entriesAfterDelete.length !== 1) {
         throw new Error('Failed to delete entries');
     }
-    // Test joinTables
-    var joinedEntries = db.joinTables('TestTable1', 'TestTable2', 'ID');
+    // Test joinInner
+    var joinedEntries = db.joinInner('TestTable1', 'TestTable2', 'ID');
     if (joinedEntries.length !== 1 || joinedEntries[0]['ID'] !== 2 || joinedEntries[0]['Name'] !== 'Alice' || joinedEntries[0]['City'] !== 'London') {
         throw new Error('Failed to join tables');
     }

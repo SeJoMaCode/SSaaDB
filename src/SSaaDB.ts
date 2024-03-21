@@ -225,7 +225,7 @@ class SSaaDB {
     * @param headers - An array of column names to include in the result (optional).
     * @returns An array of objects representing the joined entries with the selected columns.
     */
-    joinTables(table1Name: string, table2Name: string, joinKey: string, headers: string[] = null) {
+    joinInner(table1Name: string, table2Name: string, joinKey: string, headers: string[] = null) {
       const table1Entries = headers
         ? this.getEntries(table1Name, null, [joinKey, ...headers.filter((header: string) => header.startsWith(table1Name + '.')).map((header: string) => header.split('.')[1])])
         : this.getEntries(table1Name);

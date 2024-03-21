@@ -47,7 +47,7 @@ db.createTable('orders', ['id', 'userId', 'product']);
 db.insertEntry('orders', [1, 1, 'Product A']);
 db.insertEntry('orders', [2, 1, 'Product B']);
 
-const joinedData = db.joinTables('users', 'orders', 'id', ['users.name', 'orders.product']);
+const joinedData = db.joinInner('users', 'orders', 'id', ['users.name', 'orders.product']);
 console.log(joinedData);
 ```
 
@@ -58,7 +58,7 @@ console.log(joinedData);
 - Optimize update and deletion by doing it in bulk
 - Filter entries with getRange() instead of getting all values then filtering
 - Use a pagination system for getEntries for the case of larger tables
-    - This will cause joinTables to need to be reworked
+    - This will cause joinInner to need to be reworked
 - Handle concurrent access to the database
 - Ability to do other types of joins
 
@@ -115,7 +115,7 @@ Retrieves entries from the specified table that match the filter criteria and se
 - `headers` (optional): An array of column names to include in the result.
 - Returns an array of objects representing the retrieved entries.
 
-### `joinTables(table1Name: string, table2Name: string, joinKey: string, headers?: string[]): object[]`
+### `joinInner(table1Name: string, table2Name: string, joinKey: string, headers?: string[]): object[]`
 Performs an inner join on two tables based on a join key and retrieves the specified headers.
 - `table1Name`: The name of the first table to join.
 - `table2Name`: The name of the second table to join.
