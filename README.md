@@ -53,15 +53,20 @@ console.log(joinedData);
 
 ## Roadmap
 
+- Adding a metadata sheet and precede table data with metadata on sheets
 - Automatic creation/detection of Spreadsheets(databases)
 - True primary and foreign keys
+    - hinges on metadata
 - Optimize update and deletion by doing it in bulk
+    - hinges on metadata
 - Filter entries with getRange() instead of getting all values then filtering
+    - hinges on metadata
 - Use a pagination system for getEntries for the case of larger tables
-    - This will cause joinInner to need to be reworked
 - Handle concurrent access to the database
-- Ability to do other types of joins
-
+    - hinges on metadata
+- rework of joining
+    - hinges on metadata and pagination
+    - include multiple types of joins
 
 ## API Reference
 
